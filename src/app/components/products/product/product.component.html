@@ -1,13 +1,10 @@
 <article class="product">
   <figure>
-    <img
-      src="https://biancazapatka.com/wp-content/uploads/2021/10/rote-bete-burger.jpg"
-      alt="b"
-    />
+    <img [src]="produto.imgUrl" [alt]="produto.nome" />
   </figure>
   <div class="text">
     <header>
-      <h3>Double Cheese Potato Burger</h3>
+      <h3>{{ produto.nome }}</h3>
       <a href="#">Burger</a>
     </header>
     <footer class="text-footer">

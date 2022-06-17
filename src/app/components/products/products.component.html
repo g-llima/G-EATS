@@ -1,1 +1,3 @@
-<app-product></app-product>
+<ul *ngFor="let produto of _PRODUTOS">
+  <app-product [produto]="produto"></app-product>
+</ul>
