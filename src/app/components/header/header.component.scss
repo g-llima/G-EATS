@@ -1,0 +1,33 @@
+header {
+    background: #f8f8f8;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px #dbdbdb;
+
+    .conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1500px;
+
+        .logo {
+            h2 {
+                span {
+                    color: var(--color-red);
+                }
+            }
+        }
+
+        .items {
+            fa-icon {
+                color: black;
+                transition: all .1s ease-out;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--color-red);
+                }
+            }
+        }
+    }
+}
