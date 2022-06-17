@@ -1,7 +1,7 @@
 export class Product {
   id: number;
   nome: string;
-  tag: string[];
+  tags: string[];
   calorias: string;
   veg?: boolean;
   imgUrl: string;
