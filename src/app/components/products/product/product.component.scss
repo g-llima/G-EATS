@@ -3,6 +3,8 @@
     margin: 3rem;
     box-shadow: 2px 2px 4px var(--color-gray);
     border-radius: 5px;
+    
+    overflow: hidden;
 
     &:hover {
         figure {
@@ -46,7 +48,7 @@
             .icone-veg {
                 display: flex;
                 align-items: center;
-                background: rgb(0, 182, 39);
+                background: var(--color-green);
                 padding: 0 5px;
                 border-radius: 2px;
                 font-size: 12px;
@@ -57,6 +59,7 @@
 
     hr {
         margin: 0 5px;
+        border: 1px solid var(--color-gray);
     }
 
     .card-footer {
@@ -114,5 +117,15 @@
                 font-size: 14px;
             }
         }
+    }
+
+    .added {
+        border: 1px solid var(--color-green);
+        display: flex;
+        background: var(--color-green);
+        margin-top: -5px;
+        height: 5px;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
     }
 }
