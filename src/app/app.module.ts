@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductService } from './services/product.service';
+import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProductService } from './services/product.service';
     HomeComponent,
     ProductsComponent,
     ProductComponent,
+    ArrayToStringPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [ProductService],

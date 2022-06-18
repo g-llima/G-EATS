@@ -5,7 +5,7 @@
   <div class="text">
     <header>
       <h3>{{ produto.nome }}</h3>
-      <a href="#">Burger</a>
+      <a href="#">{{ produto.tags | arrayToString: " | " }}</a>
     </header>
     <footer class="text-footer">
       <p><fa-icon [icon]="faFire"></fa-icon>220 - 280 Kcal</p>

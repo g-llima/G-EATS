@@ -6,7 +6,7 @@ export class ProductService {
       {
         id: 0,
         nome: 'Double Cheese Potato Burger',
-        tags: ['Burger'],
+        tags: ['Burger', 'Beef'],
         calorias: '220 - 280',
         veg: true,
         imgUrl:
