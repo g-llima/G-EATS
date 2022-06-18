@@ -15,10 +15,14 @@
   <hr />
   <footer class="card-footer">
     <div>
-      <h2>{{ produto.preco | currency: "BRL" }}</h2>
-      <span class="new-price">{{
-        produto.quantidade * produto.preco | currency: "BRL"
-      }}</span>
+      <h2 [ngClass]="{ 'show-text': produto.quantidade > 0 }">
+        {{ produto.preco | currency: "BRL" }}
+      </h2>
+      <span
+        class="new-price"
+        [ngClass]="{ 'show-text': produto.quantidade > 0 }"
+        >Total: {{ produto.quantidade * produto.preco | currency: "BRL" }}</span
+      >
     </div>
     <div class="buttons">
       <button (click)="diminuirQuantidade()">-</button>
