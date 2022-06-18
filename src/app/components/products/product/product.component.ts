@@ -15,4 +15,14 @@ export class ProductComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  adicionarQuantiade() {
+    this.produto.quantidade++;
+  }
+
+  diminuirQuantidade() {
+    if (this.produto.quantidade != 0) {
+      this.produto.quantidade--;
+    }
+  }
 }

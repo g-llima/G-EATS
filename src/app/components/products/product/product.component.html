@@ -16,9 +16,9 @@
   <footer class="card-footer">
     <h2>{{ produto.preco | currency: "BRL" }}</h2>
     <div class="buttons">
-      <button>-</button>
-      <p>0</p>
-      <button>+</button>
+      <button (click)="diminuirQuantidade()">-</button>
+      <p>{{ produto.quantidade }}</p>
+      <button (click)="adicionarQuantiade()">+</button>
     </div>
   </footer>
 </article>

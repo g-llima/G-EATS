@@ -6,4 +6,5 @@ export class Product {
   veg?: boolean;
   imgUrl: string;
   preco: number;
+  quantidade: number = 0;
 }

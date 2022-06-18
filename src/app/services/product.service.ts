@@ -12,6 +12,7 @@ export class ProductService {
         imgUrl:
           'https://biancazapatka.com/wp-content/uploads/2021/10/rote-bete-burger.jpg',
         preco: 5.99,
+        quantidade: 0,
       },
       {
         id: 1,
@@ -21,6 +22,7 @@ export class ProductService {
         veg: false,
         imgUrl: 'https://assets.unileversolutions.com/recipes-v2/230411.jpg',
         preco: 12.4,
+        quantidade: 0,
       },
     ];
   }
