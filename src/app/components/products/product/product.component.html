@@ -9,7 +9,7 @@
     </header>
     <footer class="text-footer">
       <p><fa-icon [icon]="faFire"></fa-icon>220 - 280 Kcal</p>
-      <p class="icone-veg">Veg</p>
+      <p class="icone-veg" *ngIf="produto.veg">Veg</p>
     </footer>
   </div>
   <hr />
