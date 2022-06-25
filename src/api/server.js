@@ -1,18 +1,22 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const connectDB = require("./database");
+const routes = require("./routes")
+
+connectDB();
+
 const app = express();
-
-app.use(express.urlencoded({
+app.use(routes);
+app.use(bodyParser.urlencoded({
     extended: true
-}))
-app.use(express.json())
+}));
+app.use(bodyParser.json());
 
-// rotas
-
-app.get("/", (req, res) => {
-    res.json({message: "Oi express"})
-})
 
 
 app.listen("6969", () => {
     console.log("Servidor iniciado.");
 })
+
