@@ -1,4 +1,3 @@
-const { v4: uuid } = require("uuid");
 const productM = require ("../app/components/products/product/productM")
 
 module.exports = {
