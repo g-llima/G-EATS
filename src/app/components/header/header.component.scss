@@ -19,13 +19,31 @@ header {
         }
 
         .items {
-            fa-icon {
-                color: black;
-                transition: all .1s ease-out;
-                cursor: pointer;
+            .carrinho {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                &:hover {
-                    color: var(--color-red);
+                fa-icon {
+                    color: black;
+                    transition: all .1s ease-out;
+                    cursor: pointer;
+                }
+
+                .quantidade-items {
+                    position: absolute;
+                    bottom: 16px;
+                    left: 10px;
+                    font-size: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    background: var(--color-red);
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
                 }
             }
         }

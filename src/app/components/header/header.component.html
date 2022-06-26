@@ -4,7 +4,10 @@
       <h2><span>G</span>EATS</h2>
     </div>
     <div class="items">
-      <fa-icon [icon]="faCartShopping" (click)="OnClick()"></fa-icon>
+      <div class="carrinho">
+        <fa-icon [icon]="faCartShopping" (click)="OnClick()"></fa-icon>
+        <p class="quantidade-items">{{ quantidadeProdutos }}</p>
+      </div>
       <app-carrinho *ngIf="carrinhoAberto"></app-carrinho>
     </div>
   </div>

@@ -15,14 +15,23 @@ export class ProductService {
 
   adicionarNoCarrinho(produto: Product) {
     this._PRODUTOS_CARRINHO.push(produto);
-    console.log(this._PRODUTOS_CARRINHO);
   }
+
   removerDoCarrinho(produto: Product) {
     this._PRODUTOS_CARRINHO = this._PRODUTOS_CARRINHO.filter(
       (x) => x != produto
     );
   }
+
   retornarCarrinho(): Product[] {
     return this._PRODUTOS_CARRINHO;
+  }
+
+  retornarQuantidadeProdutos(): number {
+    let total = 0;
+
+    this._PRODUTOS_CARRINHO.forEach((x) => (total += x.quantidade));
+
+    return total;
   }
 }

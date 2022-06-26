@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, IterableDiffers, OnInit } from '@angular/core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,24 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   faCartShopping = faCartShopping;
   carrinhoAberto = false;
+  quantidadeProdutos: number = 0;
 
-  constructor() {}
+  constructor(
+    private productService: ProductService,
+    private iterableDiffers: IterableDiffers
+  ) {}
 
-  ngOnInit(): void {}
+  ngDoCheck(): void {
+    const changes = this.iterableDiffers.find([this.quantidadeProdutos]);
+    if (changes) {
+      this.quantidadeProdutos =
+        this.productService.retornarQuantidadeProdutos();
+    }
+  }
+
+  ngOnInit(): void {
+    this.quantidadeProdutos = this.productService.retornarQuantidadeProdutos();
+  }
 
   OnClick() {
     this.carrinhoAberto = !this.carrinhoAberto;
