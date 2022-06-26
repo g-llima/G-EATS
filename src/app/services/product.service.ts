@@ -34,4 +34,32 @@ export class ProductService {
 
     return produto;
   }
+
+  comprarProdutos(produtos: Product[]) {
+    fetch('http://localhost:6969/api/create-checkout-session', {
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify({
+        items: produtos.map((item) => {
+          return {
+            id: item.id,
+            quantidade: item.quantidade,
+            preco: item.preco,
+            nome: item.nome,
+            imgUrl: item.imgUrl,
+          };
+        }),
+      }),
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => {
+        window.location = url;
+      })
+      .catch((error) => {
+        console.log('Error ', error.error);
+      });
+  }
 }

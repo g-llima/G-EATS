@@ -47,4 +47,8 @@ export class CarrinhoComponent implements OnInit, DoCheck {
   diminuirQuantidade(produto: Product) {
     produto = this.productService.diminuirQuantidade(produto);
   }
+
+  comprarProdutos() {
+    this.productService.comprarProdutos(this._PRODUTOS);
+  }
 }

@@ -5,7 +5,7 @@
       <div class="textos">
         <h4>{{ produto.nome }}</h4>
         <p>
-          {{ produto.quantidade * produto.preco | currency: "BRL" }} |
+          {{ produto.quantidade * produto.preco | currency: "BRL" }} x
           {{ produto.quantidade }}
         </p>
       </div>
@@ -15,6 +15,12 @@
         <button (click)="adicionarQuantidade(produto)">+</button>
       </div>
     </section>
-    <button class="comprar-btn" *ngIf="_PRODUTOS.length != 0">COMPRAR</button>
+    <button
+      class="comprar-btn"
+      *ngIf="_PRODUTOS.length != 0"
+      (click)="comprarProdutos()"
+    >
+      COMPRAR
+    </button>
   </div>
 </div>
