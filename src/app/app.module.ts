@@ -11,6 +11,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductService } from './services/product.service';
 import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
+import { CarrinhoComponent } from './components/header/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
     HomeComponent,
     ProductsComponent,
     ProductComponent,
+    CarrinhoComponent,
     ArrayToStringPipe,
   ],
   imports: [

@@ -8,8 +8,13 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   faCartShopping = faCartShopping;
+  carrinhoAberto = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  OnClick() {
+    this.carrinhoAberto = !this.carrinhoAberto;
+  }
 }

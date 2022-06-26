@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { ProductService } from 'src/app/services/product.service';
 import { Product } from './product';
 
 @Component({
@@ -12,15 +13,21 @@ export class ProductComponent implements OnInit {
 
   @Input() produto: Product;
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {}
 
   adicionarQuantiade() {
     this.produto.quantidade++;
+
+    if (this.produto.quantidade == 1)
+      this.productService.adicionarNoCarrinho(this.produto);
   }
 
   diminuirQuantidade() {
+    if (this.produto.quantidade == 1) {
+      this.productService.removerDoCarrinho(this.produto);
+    }
     if (this.produto.quantidade != 0) {
       this.produto.quantidade--;
     }
