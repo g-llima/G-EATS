@@ -2,6 +2,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: hidden;
     right: -25rem;
     height: 100vh;
@@ -11,6 +12,21 @@
     margin-top: 1.3rem;
     transition: all .5s ease-out;
     z-index: 9999;
+
+    .vazio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100%;
+        position: relative;
+        bottom: 0;
+        animation: surgir-carrinho-vazio .5s forwards;
+
+        fa-icon {
+            font-size: 5rem;
+        }
+    }
 
     .produtos {
         height: 90vh;
@@ -120,6 +136,19 @@
     }
     100% {
         top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes surgir-carrinho-vazio {
+    0% {
+        bottom: 40px;
+        transform: rotate(10deg);
+        opacity: 0;
+    }
+    100% {
+        bottom: 0px;
+        transform: rotate(0deg);
         opacity: 1;
     }
 }

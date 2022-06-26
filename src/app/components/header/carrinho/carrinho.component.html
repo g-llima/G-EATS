@@ -1,4 +1,9 @@
 <div class="container" [ngClass]="{ abrir: carrinhoAberto }">
+  <div class="vazio" *ngIf="_PRODUTOS.length == 0">
+    <fa-icon [icon]="faCartShopping"></fa-icon>
+    <h2>Carrinho vazio</h2>
+  </div>
+
   <div class="produtos">
     <section class="produto" *ngFor="let produto of _PRODUTOS">
       <img [src]="produto.imgUrl" [alt]="produto.nome" />

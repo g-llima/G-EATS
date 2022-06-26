@@ -12,7 +12,6 @@ routes.post("/api/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       mode: "payment",
       line_items: req.body.items.map((item) => {
-        console.log(req.body);
         return {
           price_data: {
             currency: "brl",
