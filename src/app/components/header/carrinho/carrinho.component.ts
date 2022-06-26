@@ -1,5 +1,5 @@
 import { Component, DoCheck, IterableDiffers, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { Product } from '../../products/product/product';
 
 @Component({
@@ -12,21 +12,21 @@ export class CarrinhoComponent implements OnInit, DoCheck {
   quantidadeProdutos: number = 0;
 
   constructor(
-    private productService: ProductService,
+    private carrinhoService: CarrinhoService,
     private iterableDiffers: IterableDiffers
   ) {}
 
   ngDoCheck(): void {
     const changes = this.iterableDiffers.find(this._PRODUTOS);
     if (changes) {
-      this._PRODUTOS = this.productService.retornarCarrinho();
+      this._PRODUTOS = this.carrinhoService.retornarCarrinho();
       this.quantidadeProdutos =
-        this.productService.retornarQuantidadeProdutos();
+        this.carrinhoService.retornarQuantidadeProdutos();
     }
   }
 
   ngOnInit(): void {
-    this._PRODUTOS = this.productService.retornarCarrinho();
-    this.quantidadeProdutos = this.productService.retornarQuantidadeProdutos();
+    this._PRODUTOS = this.carrinhoService.retornarCarrinho();
+    this.quantidadeProdutos = this.carrinhoService.retornarQuantidadeProdutos();
   }
 }

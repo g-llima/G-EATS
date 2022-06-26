@@ -1,0 +1,68 @@
+.container {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    max-width: 350px;
+    min-width: 300px;
+    height: 100vh;
+    background: #f8f8f8;
+    box-shadow: 4px 5px 0px 5px #dbdbdb;
+    margin-top: 1.3rem;
+    z-index: 9999;
+
+    .produto {
+        display: flex;
+        align-items: center;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 5px;
+        background: white;
+
+        img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .textos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 10px;
+
+            p {
+                margin-top: 20px;
+                font-size: 12px;
+            }
+        }
+
+        .acoes {
+            margin-left: auto;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+            button {
+                background: none;
+                outline: none;
+                border: 1px solid var(--color-red);
+                color: var(--color-red);
+                width: 25px;
+                height: 25px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                background: var(--color-red);
+                color: white;
+            }
+        }
+    }
+}

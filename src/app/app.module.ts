@@ -12,6 +12,7 @@ import { ProductComponent } from './components/products/product/product.componen
 import { ProductService } from './services/product.service';
 import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
 import { CarrinhoComponent } from './components/header/carrinho/carrinho.component';
+import { CarrinhoService } from './services/carrinho.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { CarrinhoComponent } from './components/header/carrinho/carrinho.compone
     HttpClientModule,
     FontAwesomeModule,
   ],
-  providers: [ProductService],
+  providers: [ProductService, CarrinhoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
