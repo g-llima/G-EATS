@@ -1,26 +1,17 @@
-<div class="container">
-  <section class="produto">
-    <img src="https://pbs.twimg.com/media/E2iZoBBVkAA9Xhw.jpg" alt="nome" />
+<div class="container" [ngClass]="{ abrir: carrinhoAberto }">
+  <section class="produto" *ngFor="let produto of _PRODUTOS">
+    <img [src]="produto.imgUrl" [alt]="produto.nome" />
     <div class="textos">
-      <h4>Nome do produto</h4>
-      <p>R$ 50,00 | 10</p>
+      <h4>{{ produto.nome }}</h4>
+      <p>
+        {{ produto.quantidade * produto.preco | currency: "BRL" }} |
+        {{ produto.quantidade }}
+      </p>
     </div>
     <div class="acoes">
-      <button>-</button>
-      <p>1</p>
-      <button>+</button>
-    </div>
-  </section>
-  <section class="produto">
-    <img src="https://pbs.twimg.com/media/E2iZoBBVkAA9Xhw.jpg" alt="nome" />
-    <div class="textos">
-      <h4>Nome do produto</h4>
-      <p>R$ 50,00 | 10</p>
-    </div>
-    <div class="acoes">
-      <button>-</button>
-      <p>1</p>
-      <button>+</button>
+      <button (click)="diminuirQuantidade(produto)">-</button>
+      <p>{{ produto.quantidade }}</p>
+      <button (click)="adicionarQuantidade(produto)">+</button>
     </div>
   </section>
 </div>
