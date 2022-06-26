@@ -1,22 +1,19 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
+const app = express();
 
 const connectDB = require("./database");
 const routes = require("./routes")
 
 connectDB();
 
-const app = express();
-app.use(routes);
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(cors());
 app.use(bodyParser.json());
+app.use(routes);
 
-
-
-app.listen("6969", () => {
+app.listen(6969, () => {
     console.log("Servidor iniciado.");
 })
+
 

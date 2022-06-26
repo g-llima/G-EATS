@@ -1,30 +1,17 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Product } from '../components/products/product/product';
 
+@Injectable()
 export class ProductService {
-  retrieveAll(): Product[] {
-    return [
-      {
-        id: 0,
-        nome: 'Double Cheese Potato Burger',
-        tags: ['Burger', 'Beef'],
-        calorias: '220 - 280',
-        veg: true,
-        imgUrl:
-          'https://biancazapatka.com/wp-content/uploads/2021/10/rote-bete-burger.jpg',
-        preco: 5.99,
-        quantidade: 0,
-      },
-      {
-        id: 1,
-        nome: 'Hambúrguer com Crispy de Cebola',
-        tags: ['Burger'],
-        calorias: '220 - 280',
-        veg: false,
-        imgUrl: 'https://assets.unileversolutions.com/recipes-v2/230411.jpg',
-        preco: 12.4,
-        quantidade: 0,
-      },
-    ];
+  constructor(private httpClient: HttpClient) {}
+
+  retrieveAll() {
+    this.httpClient
+      .get('http://localhost:6969/')
+      .subscribe((x) => console.log(x));
   }
 
   addToCART(produto: Product) {}
