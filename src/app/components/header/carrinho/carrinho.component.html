@@ -1,17 +1,20 @@
 <div class="container" [ngClass]="{ abrir: carrinhoAberto }">
-  <section class="produto" *ngFor="let produto of _PRODUTOS">
-    <img [src]="produto.imgUrl" [alt]="produto.nome" />
-    <div class="textos">
-      <h4>{{ produto.nome }}</h4>
-      <p>
-        {{ produto.quantidade * produto.preco | currency: "BRL" }} |
-        {{ produto.quantidade }}
-      </p>
-    </div>
-    <div class="acoes">
-      <button (click)="diminuirQuantidade(produto)">-</button>
-      <p>{{ produto.quantidade }}</p>
-      <button (click)="adicionarQuantidade(produto)">+</button>
-    </div>
-  </section>
+  <div class="produtos">
+    <section class="produto" *ngFor="let produto of _PRODUTOS">
+      <img [src]="produto.imgUrl" [alt]="produto.nome" />
+      <div class="textos">
+        <h4>{{ produto.nome }}</h4>
+        <p>
+          {{ produto.quantidade * produto.preco | currency: "BRL" }} |
+          {{ produto.quantidade }}
+        </p>
+      </div>
+      <div class="acoes">
+        <button (click)="diminuirQuantidade(produto)">-</button>
+        <p>{{ produto.quantidade }}</p>
+        <button (click)="adicionarQuantidade(produto)">+</button>
+      </div>
+    </section>
+    <button class="comprar-btn" *ngIf="_PRODUTOS.length != 0">COMPRAR</button>
+  </div>
 </div>

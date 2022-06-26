@@ -1,82 +1,115 @@
 .container {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    right: -20rem;
-    max-width: 350px;
+    right: -25rem;
     height: 100vh;
+    max-width: 350px;
     background: #f8f8f8;
     box-shadow: 4px 5px 0px 5px #dbdbdb;
     margin-top: 1.3rem;
     transition: all .5s ease-out;
     z-index: 9999;
 
-    .produto {
+    .produtos {
+        height: 90vh;
+        overflow: auto;
         display: flex;
-        align-items: center;
-        max-width: 320px;
-        margin: 0 auto;
-        padding: 5px;
-        border-radius: 5px;
-        background: white;
-        margin-top: 10px;
-        position: relative;
-        
-        animation: surgir-produto .3s forwards;
+        flex-direction: column;
 
-        img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-        }
-
-        .textos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-left: 10px;
-            width: 50%;
-
-            p {
-                margin-top: 20px;
-                font-size: 12px;
-            }
-        }
-
-        .acoes {
-            margin-left: auto;
-            padding: 10px;
+        .produto {
             display: flex;
             align-items: center;
+            max-width: 320px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 5px;
+            background: white;
+            margin-top: 10px;
+            position: relative;
+            
+            animation: surgir-produto .3s forwards;
 
-            button {
-                background: none;
-                outline: none;
-                border: 1px solid var(--color-red);
-                color: var(--color-red);
-                width: 25px;
-                height: 25px;
-                font-size: 20px;
-                cursor: pointer;
+            img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
             }
 
-            p {
+            .textos {
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-left: 10px;
+                width: 50%;
+
+                p {
+                    margin-top: 20px;
+                    font-size: 12px;
+                }
+            }
+
+            .acoes {
+                margin-left: auto;
+                padding: 10px;
+                display: flex;
                 align-items: center;
-                font-size: 14px;
-                width: 25px;
-                height: 25px;
-                background: var(--color-red);
-                color: white;
+
+                button {
+                    background: none;
+                    outline: none;
+                    border: 1px solid var(--color-red);
+                    color: var(--color-red);
+                    width: 25px;
+                    height: 25px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 14px;
+                    width: 25px;
+                    height: 25px;
+                    background: var(--color-red);
+                    color: white;
+                }
+            }
+        }
+        .comprar-btn {
+            margin: auto 10px 0 10px;
+            padding: 10px 5px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 1px solid var(--color-red);
+            background: var(--color-red);
+            border-radius: 5px;
+            outline: none;
+            color: #f8f8f8;
+            cursor: pointer;
+            transition: all .1s ease-out;
+            width: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: surgir-comprar-btn .3s forwards;
+
+            &:hover {
+                color: var(--color-red);
+                background: none;
             }
         }
     }
+
+
 }
 
 .abrir {
     right: 0;
     width: 25%;
-    min-width: 300px;
+    min-width: 320px;
     max-width: 350px;
 }
 
@@ -88,5 +121,14 @@
     100% {
         top: 0px;
         opacity: 1;
+    }
+}
+
+@keyframes surgir-comprar-btn {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30%;
     }
 }
