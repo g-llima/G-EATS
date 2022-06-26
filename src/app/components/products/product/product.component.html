@@ -8,7 +8,7 @@
       <a href="#">{{ produto.tags | arrayToString: " | " }}</a>
     </header>
     <footer class="text-footer">
-      <p><fa-icon [icon]="faFire"></fa-icon>220 - 280 Kcal</p>
+      <p><fa-icon [icon]="faFire"></fa-icon>{{ produto.calorias }} Kcal</p>
       <p class="icone-veg" *ngIf="produto.veg">Veg</p>
     </footer>
   </div>
