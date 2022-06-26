@@ -8,10 +8,8 @@ import { Product } from '../components/products/product/product';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  retrieveAll() {
-    this.httpClient
-      .get('http://localhost:6969/')
-      .subscribe((x) => console.log(x));
+  retrieveAll(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>('http://localhost:6969/');
   }
 
   addToCART(produto: Product) {}
