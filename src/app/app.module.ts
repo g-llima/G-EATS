@@ -13,6 +13,7 @@ import { ProductService } from './services/product.service';
 import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
 import { CarrinhoComponent } from './components/header/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
+import { ProductViewComponent } from './components/products/product/product-view/product-view.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CarrinhoService } from './services/carrinho.service';
     ProductComponent,
     CarrinhoComponent,
     ArrayToStringPipe,
+    ProductViewComponent,
   ],
   imports: [
     BrowserModule,

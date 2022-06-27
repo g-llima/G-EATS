@@ -1,4 +1,4 @@
-<article class="product">
+<article class="product" (click)="alternarDetalhesProdAberto()">
   <figure>
     <img [src]="produto.imgUrl" [alt]="produto.nome" />
   </figure>
@@ -24,7 +24,7 @@
         >Total: {{ produto.quantidade * produto.preco | currency: "BRL" }}</span
       >
     </div>
-    <div class="buttons">
+    <div class="buttons" (click)="$event.stopPropagation()">
       <button (click)="diminuirQuantidade()">-</button>
       <p>{{ produto.quantidade }}</p>
       <button (click)="adicionarQuantidade()">+</button>
@@ -32,3 +32,4 @@
   </footer>
   <span class="added" *ngIf="produto.quantidade > 0"></span>
 </article>
+<app-product-view *ngIf="detalhesProdAberto"></app-product-view>
