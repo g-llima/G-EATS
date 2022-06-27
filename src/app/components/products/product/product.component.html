@@ -32,4 +32,7 @@
   </footer>
   <span class="added" *ngIf="produto.quantidade > 0"></span>
 </article>
-<app-product-view *ngIf="detalhesProdAberto"></app-product-view>
+<app-product-view
+  *ngIf="detalhesProdAberto"
+  [produto]="produto"
+></app-product-view>

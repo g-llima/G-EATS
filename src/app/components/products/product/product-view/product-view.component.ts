@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-view',
   templateUrl: './product-view.component.html',
-  styleUrls: ['./product-view.component.scss']
+  styleUrls: ['./product-view.component.scss'],
 })
 export class ProductViewComponent implements OnInit {
+  faFire = faFire;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  @Input() produto: Product;
 
+  ngOnInit(): void {}
 }
