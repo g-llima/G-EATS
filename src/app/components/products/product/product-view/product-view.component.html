@@ -5,14 +5,15 @@
   <div class="info">
     <header>
       <h2>{{ produto.nome }}</h2>
-      <p><fa-icon [icon]="faFire"></fa-icon>{{ produto.calorias }} Kcal</p>
+      <h5><fa-icon [icon]="faFire"></fa-icon>{{ produto.calorias }} Kcal</h5>
       <p *ngIf="produto.veg">VEGANO</p>
     </header>
     <hr />
     <body>
+      <p>INGREDIENTES</p>
       <ul>
-        <li>Alface</li>
-        <li>Tomate</li>
+        <li class="ativo">Alface</li>
+        <li class="obrigatorio">Tomate</li>
         <li>Cebola</li>
         <li>Milho</li>
         <li>Molho</li>
@@ -20,11 +21,6 @@
     </body>
     <hr />
     <footer>
-      <div>
-        <button>-</button>
-        <p>0</p>
-        <button>+</button>
-      </div>
       <button>ADICIONAR AO CARRINHO</button>
     </footer>
   </div>
