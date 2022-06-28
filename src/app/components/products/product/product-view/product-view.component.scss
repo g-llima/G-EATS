@@ -31,6 +31,11 @@
 
         header {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
 
             h5 {
                 margin: 10px 0;
