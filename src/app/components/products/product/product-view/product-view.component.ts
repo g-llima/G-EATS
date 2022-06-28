@@ -14,7 +14,5 @@ export class ProductViewComponent implements OnInit {
 
   @Input() produto: Product;
 
-  ngOnInit(): void {
-    console.log(this.produto.ingredientes[0]);
-  }
+  ngOnInit(): void {}
 }
