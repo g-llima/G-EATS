@@ -34,6 +34,10 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
+  ingredientes: {
+    type: Array,
+    require: true,
+  }
 })
   
   module.exports = mongoose.model("Product", ProductSchema);

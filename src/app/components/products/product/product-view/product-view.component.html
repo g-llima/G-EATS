@@ -12,11 +12,12 @@
     <body>
       <p>INGREDIENTES</p>
       <ul>
-        <li class="ativo">Alface</li>
-        <li class="obrigatorio">Tomate</li>
-        <li>Cebola</li>
-        <li>Milho</li>
-        <li>Molho</li>
+        <li
+          *ngFor="let ingrediente of produto.ingredientes"
+          [ngClass]="{ essencial: ingrediente.essencial == true, ativo: true }"
+        >
+          {{ ingrediente.nome }}
+        </li>
       </ul>
     </body>
     <hr />

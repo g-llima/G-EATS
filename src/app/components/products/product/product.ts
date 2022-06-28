@@ -7,4 +7,10 @@ export class Product {
   imgUrl: string;
   preco: number;
   quantidade: number = 0;
+  ingredientes: [
+    {
+      nome: string;
+      essencial: boolean;
+    }
+  ];
 }
