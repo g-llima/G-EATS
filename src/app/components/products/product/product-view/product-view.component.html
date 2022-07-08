@@ -1,24 +1,17 @@
 <section class="container">
   <figure>
-    <img [src]="produto.imgUrl" [alt]="produto.nome" />
+    <img [src]="product.imgUrl" [alt]="product.name" />
   </figure>
   <div class="info">
     <header>
-      <h2>{{ produto.nome }}</h2>
-      <h5><fa-icon [icon]="faFire"></fa-icon>{{ produto.calorias }} Kcal</h5>
-      <p *ngIf="produto.veg">VEGANO</p>
+      <h2>{{ product.name }}</h2>
+      <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
+      <p *ngIf="product.veg">VEGANO</p>
     </header>
     <hr />
     <body>
-      <p>INGREDIENTES</p>
-      <ul>
-        <li
-          *ngFor="let ingrediente of produto.ingredientes"
-          [ngClass]="{ essencial: ingrediente.essencial == true, ativo: true }"
-        >
-          {{ ingrediente.nome }}
-        </li>
-      </ul>
+      <h4>DESCRIÇÃO</h4>
+      <p>{{ product.description }}</p>
     </body>
     <hr />
     <footer>

@@ -6,17 +6,17 @@
 
   <div class="produtos">
     <section class="produto" *ngFor="let produto of _PRODUTOS">
-      <img [src]="produto.imgUrl" [alt]="produto.nome" />
+      <img [src]="produto.imgUrl" [alt]="produto.name" />
       <div class="textos">
-        <h4>{{ produto.nome }}</h4>
+        <h4>{{ produto.name }}</h4>
         <p>
-          {{ produto.quantidade * produto.preco | currency: "BRL" }} x
-          {{ produto.quantidade }}
+          {{ produto.quantity * produto.price | currency: "BRL" }} x
+          {{ produto.quantity }}
         </p>
       </div>
       <div class="acoes">
         <button (click)="diminuirQuantidade(produto)">-</button>
-        <p>{{ produto.quantidade }}</p>
+        <p>{{ produto.quantity }}</p>
         <button (click)="adicionarQuantidade(produto)">+</button>
       </div>
     </section>

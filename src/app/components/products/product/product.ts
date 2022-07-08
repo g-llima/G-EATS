@@ -1,16 +1,10 @@
 export class Product {
   id: number;
-  nome: string;
-  tags: string[];
-  calorias: string;
+  name: string;
+  description: string;
+  calories: string;
   veg?: boolean;
   imgUrl: string;
-  preco: number;
-  quantidade: number = 0;
-  ingredientes: [
-    {
-      nome: string;
-      essencial: boolean;
-    }
-  ];
+  price: number;
+  quantity: number = 0;
 }

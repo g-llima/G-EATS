@@ -22,7 +22,7 @@ export class CarrinhoService {
   retornarQuantidadeProdutos(): number {
     let total = 0;
 
-    this._PRODUTOS_CARRINHO.forEach((x) => (total += x.quantidade));
+    this._PRODUTOS_CARRINHO.forEach((x) => (total += x.quantity));
 
     return total;
   }

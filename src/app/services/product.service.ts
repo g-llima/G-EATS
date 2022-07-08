@@ -15,27 +15,27 @@ export class ProductService {
     return this.httpClient.get<Product[]>('http://localhost:6969/');
   }
 
-  adicionarQuantidade(produto: Product): Product {
-    produto.quantidade++;
+  addQuantity(produto: Product): Product {
+    produto.quantity++;
 
-    if (produto.quantidade == 1)
+    if (produto.quantity == 1)
       this.carrinhoService.adicionarNoCarrinho(produto);
 
     return produto;
   }
 
-  diminuirQuantidade(produto: Product): Product {
-    if (produto.quantidade == 1) {
+  removeQuantity(produto: Product): Product {
+    if (produto.quantity == 1) {
       this.carrinhoService.removerDoCarrinho(produto);
     }
-    if (produto.quantidade != 0) {
-      produto.quantidade--;
+    if (produto.quantity != 0) {
+      produto.quantity--;
     }
 
     return produto;
   }
 
-  comprarProdutos(produtos: Product[]) {
+  buyProducts(produtos: Product[]) {
     fetch('http://localhost:6969/api/create-checkout-session', {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
@@ -43,9 +43,9 @@ export class ProductService {
         items: produtos.map((item) => {
           return {
             id: item.id,
-            quantidade: item.quantidade,
-            preco: item.preco,
-            nome: item.nome,
+            quantidade: item.quantity,
+            preco: item.price,
+            nome: item.name,
             imgUrl: item.imgUrl,
           };
         }),

@@ -1,38 +1,35 @@
-<article class="product" (click)="alternarDetalhesProdAberto()">
+<article class="product" (click)="handleProductOpen()">
   <figure>
-    <img [src]="produto.imgUrl" [alt]="produto.nome" />
+    <img [src]="product.imgUrl" [alt]="product.name" />
   </figure>
   <div class="text">
     <header>
-      <h3>{{ produto.nome }}</h3>
-      <a href="#">{{ produto.tags | arrayToString: " | " }}</a>
+      <h3>{{ product.name }}</h3>
     </header>
     <footer class="text-footer">
-      <p><fa-icon [icon]="faFire"></fa-icon>{{ produto.calorias }} Kcal</p>
-      <p class="icone-veg" *ngIf="produto.veg">Veg</p>
+      <p><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</p>
+      <p class="icone-veg" *ngIf="product.veg">Veg</p>
     </footer>
   </div>
   <hr />
   <footer class="card-footer">
     <div>
-      <h2 [ngClass]="{ 'show-text': produto.quantidade > 0 }">
-        {{ produto.preco | currency: "BRL" }}
+      <h2 [ngClass]="{ 'show-text': product.quantity > 0 }">
+        {{ product.price | currency: "BRL" }}
       </h2>
-      <span
-        class="new-price"
-        [ngClass]="{ 'show-text': produto.quantidade > 0 }"
-        >Total: {{ produto.quantidade * produto.preco | currency: "BRL" }}</span
+      <span class="new-price" [ngClass]="{ 'show-text': product.quantity > 0 }"
+        >Total: {{ product.quantity * product.price | currency: "BRL" }}</span
       >
     </div>
     <div class="buttons" (click)="$event.stopPropagation()">
-      <button (click)="diminuirQuantidade()">-</button>
-      <p>{{ produto.quantidade }}</p>
-      <button (click)="adicionarQuantidade()">+</button>
+      <button (click)="removeQuantity()">-</button>
+      <p>{{ product.quantity }}</p>
+      <button (click)="addQuantity()">+</button>
     </div>
   </footer>
-  <span class="added" *ngIf="produto.quantidade > 0"></span>
+  <span class="added" *ngIf="product.quantity > 0"></span>
 </article>
 <app-product-view
   *ngIf="detalhesProdAberto"
-  [produto]="produto"
+  [product]="product"
 ></app-product-view>

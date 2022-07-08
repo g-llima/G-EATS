@@ -12,7 +12,7 @@ export class ProductViewComponent implements OnInit {
 
   constructor() {}
 
-  @Input() produto: Product;
+  @Input() product: Product;
 
   ngOnInit(): void {}
 }

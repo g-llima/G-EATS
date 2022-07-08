@@ -12,21 +12,21 @@ export class ProductComponent implements OnInit {
   faFire = faFire;
   detalhesProdAberto = false;
 
-  @Input() produto: Product;
+  @Input() product: Product;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {}
 
-  adicionarQuantidade() {
-    this.produto = this.productService.adicionarQuantidade(this.produto);
+  addQuantity() {
+    this.product = this.productService.addQuantity(this.product);
   }
 
-  diminuirQuantidade() {
-    this.produto = this.productService.diminuirQuantidade(this.produto);
+  removeQuantity() {
+    this.product = this.productService.removeQuantity(this.product);
   }
 
-  alternarDetalhesProdAberto() {
+  handleProductOpen() {
     this.detalhesProdAberto = !this.detalhesProdAberto;
   }
 }
