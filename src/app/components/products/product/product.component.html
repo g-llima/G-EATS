@@ -1,10 +1,10 @@
 <article class="product" (click)="handleProductOpen()">
   <figure>
-    <img [src]="product.imgUrl" [alt]="product.name" />
+    <img [src]="product.img_url" [alt]="product.product_name" />
   </figure>
   <div class="text">
     <header>
-      <h3>{{ product.name }}</h3>
+      <h3>{{ product.product_name }}</h3>
     </header>
     <footer class="text-footer">
       <p><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</p>

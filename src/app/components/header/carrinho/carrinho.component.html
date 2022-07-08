@@ -6,9 +6,9 @@
 
   <div class="produtos">
     <section class="produto" *ngFor="let produto of _PRODUTOS">
-      <img [src]="produto.imgUrl" [alt]="produto.name" />
+      <img [src]="produto.img_url" [alt]="produto.product_name" />
       <div class="textos">
-        <h4>{{ produto.name }}</h4>
+        <h4>{{ produto.product_name }}</h4>
         <p>
           {{ produto.quantity * produto.price | currency: "BRL" }} x
           {{ produto.quantity }}

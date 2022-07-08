@@ -1,10 +1,10 @@
 export class Product {
   id: number;
-  name: string;
+  product_name: string;
   description: string;
   calories: string;
   veg?: boolean;
-  imgUrl: string;
+  img_url: string;
   price: number;
   quantity: number = 0;
 }

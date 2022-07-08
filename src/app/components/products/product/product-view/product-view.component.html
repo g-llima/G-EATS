@@ -1,10 +1,10 @@
 <section class="container">
   <figure>
-    <img [src]="product.imgUrl" [alt]="product.name" />
+    <img [src]="product.img_url" [alt]="product.product_name" />
   </figure>
   <div class="info">
     <header>
-      <h2>{{ product.name }}</h2>
+      <h2>{{ product.product_name }}</h2>
       <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
       <p *ngIf="product.veg">VEGANO</p>
     </header>

@@ -12,7 +12,9 @@ export class ProductService {
   ) {}
 
   retrieveAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('http://localhost:6969/');
+    return this.httpClient.get<Product[]>(
+      'http://geats-api.herokuapp.com/products'
+    );
   }
 
   addQuantity(produto: Product): Product {
@@ -45,8 +47,8 @@ export class ProductService {
             id: item.id,
             quantidade: item.quantity,
             preco: item.price,
-            nome: item.name,
-            imgUrl: item.imgUrl,
+            nome: item.product_name,
+            imgUrl: item.img_url,
           };
         }),
       }),
