@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Product } from '../components/products/product/product';
 import { CarrinhoService } from './carrinho.service';
 
@@ -12,9 +13,7 @@ export class ProductService {
   ) {}
 
   retrieveAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(
-      'http://geats-api.herokuapp.com/products'
-    );
+    return this.httpClient.get<Product[]>(environment.api_url);
   }
 
   addQuantity(produto: Product): Product {
@@ -38,30 +37,36 @@ export class ProductService {
   }
 
   buyProducts(produtos: Product[]) {
-    fetch('http://localhost:6969/api/create-checkout-session', {
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST',
-      body: JSON.stringify({
-        items: produtos.map((item) => {
-          return {
-            id: item.id,
-            quantidade: item.quantity,
-            preco: item.price,
-            nome: item.product_name,
-            imgUrl: item.img_url,
-          };
-        }),
-      }),
-    })
-      .then((res) => {
-        if (res.ok) return res.json();
-        return res.json().then((json) => Promise.reject(json));
-      })
-      .then(({ url }) => {
-        window.location = url;
-      })
-      .catch((error) => {
-        console.log('Error ', error.error);
-      });
+    console.log(produtos);
+    this.httpClient.post(
+      environment.api_url + 'api/create-checkout-session',
+      produtos
+    );
+
+    // fetch('http://localhost:6969/api/create-checkout-session', {
+    //   headers: { 'Content-Type': 'application/json' },
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     items: produtos.map((item) => {
+    //       return {
+    //         id: item.id,
+    //         quantidade: item.quantity,
+    //         preco: item.price,
+    //         nome: item.product_name,
+    //         imgUrl: item.img_url,
+    //       };
+    //     }),
+    //   }),
+    // })
+    //   .then((res) => {
+    //     if (res.ok) return res.json();
+    //     return res.json().then((json) => Promise.reject(json));
+    //   })
+    //   .then(({ url }) => {
+    //     window.location = url;
+    //   })
+    //   .catch((error) => {
+    //     console.log('Error ', error.error);
+    //   });
   }
 }
