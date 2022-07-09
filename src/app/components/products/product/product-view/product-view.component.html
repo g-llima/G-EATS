@@ -12,7 +12,7 @@
       <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
     </body>
     <footer>
-      <button [ngClass]="{ active: isOnCart }" (click)="addOnCart()">
+      <button [ngClass]="{ active: isOnCart }" (click)="handleCardButton()">
         <fa-icon [icon]="faCartPlus"></fa-icon>
       </button>
     </footer>

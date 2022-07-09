@@ -13,6 +13,7 @@ export class CarrinhoService {
     this._PRODUTOS_CARRINHO = this._PRODUTOS_CARRINHO.filter(
       (x) => x != produto
     );
+    produto.quantity = 0;
   }
 
   retornarCarrinho(): Product[] {

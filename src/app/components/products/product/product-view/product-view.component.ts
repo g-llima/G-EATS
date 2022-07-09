@@ -28,9 +28,20 @@ export class ProductViewComponent implements OnInit {
     if (this.carrinhoService.isInCart(this.product.id)) this.isOnCart = true;
   }
 
+  handleCardButton(): void {
+    this.addOnCart();
+    this.removeFromCart();
+  }
+
   addOnCart(): void {
     if (!this.carrinhoService.isInCart(this.product.id)) {
       this.product = this.productService.addQuantity(this.product);
+    }
+  }
+
+  removeFromCart(): void {
+    if (this.isOnCart) {
+      this.carrinhoService.removerDoCarrinho(this.product);
     }
   }
 
