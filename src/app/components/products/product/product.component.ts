@@ -29,4 +29,8 @@ export class ProductComponent implements OnInit {
   handleProductOpen() {
     this.detalhesProdAberto = !this.detalhesProdAberto;
   }
+
+  onCloseClick(close: boolean) {
+    if (close) this.detalhesProdAberto = false;
+  }
 }

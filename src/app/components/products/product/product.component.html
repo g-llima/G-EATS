@@ -32,4 +32,5 @@
 <app-product-view
   *ngIf="detalhesProdAberto"
   [product]="product"
+  (close)="onCloseClick($event)"
 ></app-product-view>

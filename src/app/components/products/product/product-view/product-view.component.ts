@@ -1,5 +1,17 @@
-import { Component, Input, IterableDiffers, OnInit } from '@angular/core';
-import { faFire, faLeaf, faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  IterableDiffers,
+  OnInit,
+  Output,
+} from '@angular/core';
+import {
+  faFire,
+  faLeaf,
+  faCartPlus,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from '../product';
@@ -13,8 +25,15 @@ export class ProductViewComponent implements OnInit {
   faFire = faFire;
   faLeaf = faLeaf;
   faCartPlus = faCartPlus;
+  faXmark = faXmark;
 
   isOnCart = false;
+
+  @Output() close = new EventEmitter<boolean>();
+
+  onClose() {
+    this.close.emit(true);
+  }
 
   constructor(
     private carrinhoService: CarrinhoService,

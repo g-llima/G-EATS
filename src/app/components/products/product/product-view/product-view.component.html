@@ -1,4 +1,6 @@
+<div class="background" (click)="onClose()"></div>
 <section class="container">
+  <fa-icon [icon]="faXmark" class="closeBtn" (click)="onClose()"></fa-icon>
   <figure>
     <img [src]="product.img_url" [alt]="product.product_name" />
   </figure>
