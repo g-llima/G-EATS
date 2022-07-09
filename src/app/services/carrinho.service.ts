@@ -26,4 +26,8 @@ export class CarrinhoService {
 
     return total;
   }
+
+  isInCart(id: number): boolean {
+    return this._PRODUTOS_CARRINHO.filter((x) => x.id === id).length > 0;
+  }
 }

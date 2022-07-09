@@ -5,17 +5,16 @@
   <div class="info">
     <header>
       <h2>{{ product.product_name }}</h2>
-      <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
-      <p *ngIf="product.veg">VEGANO</p>
+      <fa-icon *ngIf="product.veg" [icon]="faLeaf"></fa-icon>
     </header>
-    <hr />
     <body>
-      <h4>DESCRIÇÃO</h4>
       <p>{{ product.description }}</p>
+      <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
     </body>
-    <hr />
     <footer>
-      <button>ADICIONAR AO CARRINHO</button>
+      <button [ngClass]="{ active: isOnCart }" (click)="addOnCart()">
+        <fa-icon [icon]="faCartPlus"></fa-icon>
+      </button>
     </footer>
   </div>
 </section>

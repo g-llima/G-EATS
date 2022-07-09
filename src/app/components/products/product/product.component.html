@@ -15,7 +15,7 @@
   <footer class="card-footer">
     <div>
       <h2 [ngClass]="{ 'show-text': product.quantity > 0 }">
-        {{ product.price / 100 | currency: "BRL" }}
+        {{ product.price | currency: "BRL" }}
       </h2>
       <span class="new-price" [ngClass]="{ 'show-text': product.quantity > 0 }"
         >Total: {{ product.quantity * product.price | currency: "BRL" }}</span
