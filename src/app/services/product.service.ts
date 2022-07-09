@@ -38,35 +38,10 @@ export class ProductService {
 
   buyProducts(produtos: Product[]) {
     console.log(produtos);
-    this.httpClient.post(
-      environment.api_url + 'api/create-checkout-session',
-      produtos
-    );
-
-    // fetch('http://localhost:6969/api/create-checkout-session', {
-    //   headers: { 'Content-Type': 'application/json' },
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     items: produtos.map((item) => {
-    //       return {
-    //         id: item.id,
-    //         quantidade: item.quantity,
-    //         preco: item.price,
-    //         nome: item.product_name,
-    //         imgUrl: item.img_url,
-    //       };
-    //     }),
-    //   }),
-    // })
-    //   .then((res) => {
-    //     if (res.ok) return res.json();
-    //     return res.json().then((json) => Promise.reject(json));
-    //   })
-    //   .then(({ url }) => {
-    //     window.location = url;
-    //   })
-    //   .catch((error) => {
-    //     console.log('Error ', error.error);
-    //   });
+    this.httpClient
+      .post(environment.api_url + 'api/create-checkout-session', produtos)
+      .subscribe((x: any) => {
+        window.location.href = x.sessionUrl;
+      });
   }
 }
