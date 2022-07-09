@@ -10,7 +10,7 @@
       <div class="textos">
         <h4>{{ produto.product_name }}</h4>
         <p>
-          {{ produto.quantity * produto.price | currency: "BRL" }} x
+          {{ produto.quantity * (produto.price / 100) | currency: "BRL" }} x
           {{ produto.quantity }}
         </p>
       </div>
