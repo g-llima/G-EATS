@@ -7,13 +7,13 @@
   <div class="info">
     <header>
       <h2>{{ product.product_name }}</h2>
-      <mat-icon *ngIf="product.veg">nature</mat-icon>
+      <mat-icon *ngIf="product.veg">spa</mat-icon>
     </header>
     <body>
       <p>{{ product.description }}</p>
-      <h5><mat-icon>whatshot</mat-icon>{{ product.calories }} Kcal</h5>
     </body>
     <footer>
+      <h5><mat-icon>whatshot</mat-icon>{{ product.calories }} Kcal</h5>
       <button [ngClass]="{ active: isOnCart }" (click)="handleCardButton()">
         <mat-icon>add_shopping_cart</mat-icon>
       </button>

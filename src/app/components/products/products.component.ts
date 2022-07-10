@@ -17,23 +17,8 @@ export class ProductsComponent implements OnInit {
   }
 
   retrieveAll(): void {
-    // this._PRODUTOS = [
-    //   {
-    //     id: 0,
-    //     name: 'Produto de teste',
-    //     description: 'Descrição do produto',
-    //     calories: '220 - 280',
-    //     veg: true,
-    //     imgUrl:
-    //       'https://cdn1.dotesports.com/wp-content/uploads/2022/06/07114418/warden-1.png',
-    //     price: 5.99,
-    //     quantity: 0,
-    //   },
-    // ];
-
     this.productService.retrieveAll().subscribe((data: any) => {
       this._PRODUTOS = data;
-      console.log(data);
     });
   }
 }

@@ -2,33 +2,27 @@
   <figure>
     <img [src]="product.img_url" [alt]="product.product_name" />
   </figure>
-  <div class="text">
+
+  <div class="textos">
     <header>
-      <h3>{{ product.product_name }}</h3>
+      <h3 class="product-name">{{ product.product_name }}</h3>
+      <mat-icon *ngIf="product.veg">spa</mat-icon>
     </header>
-    <footer class="text-footer">
-      <p><mat-icon>whatshot</mat-icon>{{ product.calories }} Kcal</p>
-      <p class="icone-veg" *ngIf="product.veg">Veg</p>
-    </footer>
+    <p class="product-description">{{ product.description }}</p>
   </div>
-  <hr />
+
   <footer class="card-footer">
-    <div>
-      <h2 [ngClass]="{ 'show-text': product.quantity > 0 }">
-        {{ product.price / 100 | currency: "BRL" }}
-      </h2>
-      <span class="new-price" [ngClass]="{ 'show-text': product.quantity > 0 }"
-        >Total: {{ product.quantity * product.price | currency: "BRL" }}</span
-      >
-    </div>
-    <div class="buttons" (click)="$event.stopPropagation()">
-      <button (click)="removeQuantity()">-</button>
-      <p>{{ product.quantity }}</p>
-      <button (click)="addQuantity()">+</button>
+    <h3>
+      {{ product.price / 100 | currency: "BRL" }}
+    </h3>
+    <div (click)="$event.stopPropagation()">
+      <mat-icon (click)="handleCartClick()">add_shopping_cart</mat-icon>
     </div>
   </footer>
+
   <span class="added" *ngIf="product.quantity > 0"></span>
 </article>
+
 <app-product-view
   *ngIf="detalhesProdAberto"
   [product]="product"

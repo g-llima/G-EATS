@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from './product';
 
@@ -12,16 +13,19 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private carrinhoService: CarrinhoService
+  ) {}
 
   ngOnInit(): void {}
 
-  addQuantity() {
-    this.product = this.productService.addQuantity(this.product);
-  }
+  handleCartClick() {
+    console.log('click');
 
-  removeQuantity() {
-    this.product = this.productService.removeQuantity(this.product);
+    this.carrinhoService.isInCart(this.product.id)
+      ? this.productService.removeQuantity(this.product)
+      : this.productService.addQuantity(this.product);
   }
 
   handleProductOpen() {

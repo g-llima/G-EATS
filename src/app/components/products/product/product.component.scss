@@ -1,113 +1,78 @@
 .product {
-    max-width: 300px;
-    margin: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 300px;
+    margin: 1rem;
     box-shadow: 2px 2px 4px var(--color-gray);
     border-radius: 5px;
     cursor: pointer;
     overflow: hidden;
+    transition: .2s all ease-out;
 
     &:hover {
-        figure {
-            img {
-                transform: scale(1.1);
-            }
-        }
+        bottom: 6px;
     }
 
     figure {
         overflow: hidden;
         img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             border-radius: 5px 5px 0 0;
             object-fit: cover;
             transition: all 0.5s ease-in-out;
+
+            --mask: 
+  linear-gradient(#000 0 0) top/100% calc(100% - 5px) no-repeat,
+  conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/10.00px 5px repeat-x;
+-webkit-mask: var(--mask);
+        mask: var(--mask);
         }
     }
 
-    .text {
-        margin: 10px;
+    .textos {
+        padding: 0 10px;
 
-        .text-footer {
-            margin-top: 2rem;
+        header {
             display: flex;
+            align-items: center;
             justify-content: space-between;
 
-            fa-icon {
-                margin-right: 5px;
-            }
-
-            .icone-veg {
-                display: flex;
-                align-items: center;
-                background: var(--color-green);
-                padding: 0 5px;
-                border-radius: 2px;
-                font-size: 12px;
-                color: white;
+            .product-name {
+                margin: 10px 0;
+                font-weight: normal;
+                letter-spacing: 1px;
+                width: 90%;
             }
         }
+    
+        .product-description {
+            color: rgb(131, 131, 131);
+            font-size: 12px;
+        }
     }
-
-    hr {
-        margin: 0 5px;
-        border: 1px solid var(--color-gray);
-    }
+    
 
     .card-footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 10px;
+        padding: 20px 10px;
 
-        h2 {
+        h3 {
             color: var(--color-red);
             position: relative;
-            top: 10px;
             transition: all .1s ease-out;
             z-index: -1;
         }
 
-        .new-price {
-            position: relative;
-            font-size: 12px;
-            opacity: 0;
-            color: rgb(150, 150, 150);
-            transition: all .1s ease-out;
-        }
-
-        .show-text {
-            top: 0px;
-            opacity: 1;
-        }
-
-        .buttons {
-            display: flex;
-            align-items: center;
-
-            button {
-                width: 30px;
-                height: 30px;
-                border: 2px solid var(--color-light-gray);
-                background: white;
-                outline: none;
-                font-size: 18px;
-                font-weight: bold;
-                cursor: pointer;
+        div {
+            mat-icon {
+                transition: all .1s ease-out;
 
                 &:hover {
                     color: var(--color-red);
                 }
-            }
-
-            p {
-                width: 30px;
-                height: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: var(--color-light-gray);
-                font-size: 14px;
             }
         }
     }

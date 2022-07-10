@@ -1,3 +1,16 @@
-<ul *ngFor="let product of _PRODUTOS">
-  <app-product [product]="product"></app-product>
-</ul>
+<section>
+  <header>
+    <div>
+      <p>{{ _PRODUTOS?.length }} resultados no total</p>
+      <p>Veg</p>
+    </div>
+  </header>
+  <hr />
+  <body>
+    <ul>
+      <li *ngFor="let product of _PRODUTOS">
+        <app-product [product]="product"></app-product>
+      </li>
+    </ul>
+  </body>
+</section>
