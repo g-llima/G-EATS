@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
+
 import { Product } from './product/product';
 
 @Component({
@@ -18,6 +19,10 @@ export class ProductsComponent implements OnInit {
     this.retrieveAll();
   }
 
+  onKey(event: any) {
+    this.filterParam(event.target.value);
+  }
+
   retrieveAll(): void {
     this.productService.retrieveAll().subscribe((data: any) => {
       this._PRODUTOS = data;
@@ -25,13 +30,23 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  filterVeg(): void {
-    if (this.isFiltered) {
+  filterParam(value: string): void {
+    if (value === '') {
       this._FILTERED_PRODUCTS = this._PRODUTOS;
+    } else {
+      this._FILTERED_PRODUCTS = this._PRODUTOS.filter((x: Product) =>
+        x.product_name.toLowerCase().includes(value.toLowerCase())
+      );
       this.isFiltered = false;
+    }
+  }
+
+  filterVeg(): void {
+    if (this._FILTERED_PRODUCTS !== this._PRODUTOS) {
+      this._FILTERED_PRODUCTS = this._PRODUTOS;
     } else {
       this._FILTERED_PRODUCTS = this._PRODUTOS.filter((x: Product) => x.veg);
-      this.isFiltered = true;
     }
+    this.isFiltered = this._FILTERED_PRODUCTS !== this._PRODUTOS;
   }
 }

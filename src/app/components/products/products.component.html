@@ -1,7 +1,8 @@
 <section>
   <header>
     <div>
-      <p>{{ _PRODUTOS?.length }} resultados no total</p>
+      <p>{{ _FILTERED_PRODUCTS?.length }} resultados no total</p>
+      <input type="text" placeholder="Pesquisar" (input)="onKey($event)" />
       <button (click)="filterVeg()" [ngClass]="{ vegOn: isFiltered }">
         <mat-icon>spa</mat-icon>
       </button>
