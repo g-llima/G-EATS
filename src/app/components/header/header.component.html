@@ -5,7 +5,9 @@
     </div>
     <div class="items">
       <div class="carrinho">
-        <fa-icon [icon]="faCartShopping" (click)="OnClick()"></fa-icon>
+        <mat-icon aria-hidden="false" (click)="OnClick()"
+          >shopping_cart</mat-icon
+        >
         <p class="quantidade-items">{{ quantidadeProdutos }}</p>
       </div>
       <!-- <app-carrinho *ngIf="carrinhoAberto"></app-carrinho> -->

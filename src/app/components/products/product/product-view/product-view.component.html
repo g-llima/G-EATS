@@ -1,21 +1,21 @@
 <div class="background" (click)="onClose()"></div>
 <section class="container">
-  <fa-icon [icon]="faXmark" class="closeBtn" (click)="onClose()"></fa-icon>
+  <mat-icon class="closeBtn" (click)="onClose()">close</mat-icon>
   <figure>
     <img [src]="product.img_url" [alt]="product.product_name" />
   </figure>
   <div class="info">
     <header>
       <h2>{{ product.product_name }}</h2>
-      <fa-icon *ngIf="product.veg" [icon]="faLeaf"></fa-icon>
+      <mat-icon *ngIf="product.veg">nature</mat-icon>
     </header>
     <body>
       <p>{{ product.description }}</p>
-      <h5><fa-icon [icon]="faFire"></fa-icon>{{ product.calories }} Kcal</h5>
+      <h5><mat-icon>whatshot</mat-icon>{{ product.calories }} Kcal</h5>
     </body>
     <footer>
       <button [ngClass]="{ active: isOnCart }" (click)="handleCardButton()">
-        <fa-icon [icon]="faCartPlus"></fa-icon>
+        <mat-icon>add_shopping_cart</mat-icon>
       </button>
     </footer>
   </div>

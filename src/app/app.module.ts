@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { ArrayToStringPipe } from './pipes/array-to-string.pipe';
 import { CarrinhoComponent } from './components/header/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ProductViewComponent } from './components/products/product/product-view/product-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ProductViewComponent } from './components/products/product/product-view
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [ProductService, CarrinhoService],
   bootstrap: [AppComponent],

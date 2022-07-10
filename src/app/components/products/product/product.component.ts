@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faFire } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from './product';
 
@@ -9,7 +8,6 @@ import { Product } from './product';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  faFire = faFire;
   detalhesProdAberto = false;
 
   @Input() product: Product;

@@ -1,5 +1,4 @@
 import { Component, IterableDiffers, OnInit } from '@angular/core';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 
 @Component({
@@ -8,7 +7,6 @@ import { CarrinhoService } from 'src/app/services/carrinho.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  faCartShopping = faCartShopping;
   carrinhoAberto = false;
   quantidadeProdutos: number = 0;
 

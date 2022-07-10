@@ -2,6 +2,9 @@ header {
     background: #f8f8f8;
     padding: 1rem;
     box-shadow: 2px 2px 5px var(--color-gray);
+    position: sticky;
+    z-index: 99;
+    top: 0;
 
     .conteudo {
         display: flex;
@@ -19,17 +22,12 @@ header {
         }
 
         .items {
+
             .carrinho {
                 position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
-                fa-icon {
-                    color: black;
-                    transition: all .1s ease-out;
-                    cursor: pointer;
-                }
 
                 .quantidade-items {
                     position: absolute;

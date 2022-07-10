@@ -5,7 +5,6 @@ import {
   IterableDiffers,
   OnInit,
 } from '@angular/core';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from '../../products/product/product';
@@ -18,7 +17,6 @@ import { Product } from '../../products/product/product';
 export class CarrinhoComponent implements OnInit, DoCheck {
   _PRODUTOS: Product[];
   quantidadeProdutos: number = 0;
-  faCartShopping = faCartShopping;
 
   @Input() carrinhoAberto: boolean;
 

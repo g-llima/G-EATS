@@ -1,6 +1,6 @@
 .product {
     max-width: 300px;
-    margin: 3rem;
+    margin: 2rem;
     box-shadow: 2px 2px 4px var(--color-gray);
     border-radius: 5px;
     cursor: pointer;
@@ -65,6 +65,7 @@
             position: relative;
             top: 10px;
             transition: all .1s ease-out;
+            z-index: -1;
         }
 
         .new-price {

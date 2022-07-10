@@ -6,12 +6,6 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import {
-  faFire,
-  faLeaf,
-  faCartPlus,
-  faXmark,
-} from '@fortawesome/free-solid-svg-icons';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from '../product';
@@ -22,11 +16,6 @@ import { Product } from '../product';
   styleUrls: ['./product-view.component.scss'],
 })
 export class ProductViewComponent implements OnInit {
-  faFire = faFire;
-  faLeaf = faLeaf;
-  faCartPlus = faCartPlus;
-  faXmark = faXmark;
-
   isOnCart = false;
 
   @Output() close = new EventEmitter<boolean>();
