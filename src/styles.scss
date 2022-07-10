@@ -21,5 +21,12 @@
     --color-light-gray: #ebebeb;
     --color-gray: #dbdbdb;
 }
-html, body { height: 100%; }
+html {
+    min-height: 100%;
+    display: flex;
+}
+
+body {
+    flex: 1;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

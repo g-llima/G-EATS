@@ -17,6 +17,7 @@ import { CarrinhoService } from './services/carrinho.service';
 import { ProductViewComponent } from './components/products/product/product-view/product-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroComponent } from './components/home/hero/hero.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HeroComponent } from './components/home/hero/hero.component';
     ArrayToStringPipe,
     ProductViewComponent,
     HeroComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
