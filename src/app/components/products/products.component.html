@@ -2,13 +2,15 @@
   <header>
     <div>
       <p>{{ _PRODUTOS?.length }} resultados no total</p>
-      <p>Veg</p>
+      <button (click)="filterVeg()" [ngClass]="{ vegOn: isFiltered }">
+        <mat-icon>spa</mat-icon>
+      </button>
     </div>
   </header>
   <hr />
   <body>
     <ul>
-      <li *ngFor="let product of _PRODUTOS">
+      <li *ngFor="let product of _FILTERED_PRODUCTS">
         <app-product [product]="product"></app-product>
       </li>
     </ul>

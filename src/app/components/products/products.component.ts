@@ -9,6 +9,8 @@ import { Product } from './product/product';
 })
 export class ProductsComponent implements OnInit {
   _PRODUTOS: Product[];
+  _FILTERED_PRODUCTS: Product[];
+  isFiltered = false;
 
   constructor(private productService: ProductService) {}
 
@@ -19,6 +21,17 @@ export class ProductsComponent implements OnInit {
   retrieveAll(): void {
     this.productService.retrieveAll().subscribe((data: any) => {
       this._PRODUTOS = data;
+      this._FILTERED_PRODUCTS = data;
     });
+  }
+
+  filterVeg(): void {
+    if (this.isFiltered) {
+      this._FILTERED_PRODUCTS = this._PRODUTOS;
+      this.isFiltered = false;
+    } else {
+      this._FILTERED_PRODUCTS = this._PRODUTOS.filter((x: Product) => x.veg);
+      this.isFiltered = true;
+    }
   }
 }
