@@ -31,4 +31,12 @@ export class CarrinhoService {
   isInCart(id: number): boolean {
     return this._PRODUTOS_CARRINHO.filter((x) => x.id === id).length > 0;
   }
+
+  totalPrice(products: Product[]): number {
+    let total = 0;
+    this._PRODUTOS_CARRINHO.forEach(
+      (x: Product) => (total += x.price * x.quantity)
+    );
+    return total;
+  }
 }

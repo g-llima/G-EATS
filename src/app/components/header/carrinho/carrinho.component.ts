@@ -17,6 +17,7 @@ import { Product } from '../../products/product/product';
 export class CarrinhoComponent implements OnInit, DoCheck {
   _PRODUTOS: Product[];
   quantidadeProdutos: number = 0;
+  totalPrice: number;
 
   @Input() carrinhoAberto: boolean;
 
@@ -29,6 +30,7 @@ export class CarrinhoComponent implements OnInit, DoCheck {
   ngDoCheck(): void {
     const changes = this.iterableDiffers.find(this._PRODUTOS);
     if (changes) {
+      this.totalPrice = this.carrinhoService.totalPrice(this._PRODUTOS);
       this._PRODUTOS = this.carrinhoService.retornarCarrinho();
       this.quantidadeProdutos =
         this.carrinhoService.retornarQuantidadeProdutos();

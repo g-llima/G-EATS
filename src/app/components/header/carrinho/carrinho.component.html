@@ -20,12 +20,15 @@
         <button (click)="adicionarQuantidade(produto)">+</button>
       </div>
     </section>
-    <button
-      class="comprar-btn"
-      *ngIf="_PRODUTOS.length != 0"
-      (click)="comprarProdutos()"
-    >
-      COMPRAR
-    </button>
+    <footer>
+      <p class="total">TOTAL: {{ totalPrice / 100 | currency: "BRL" }}</p>
+      <button
+        class="comprar-btn"
+        *ngIf="_PRODUTOS.length != 0"
+        (click)="comprarProdutos()"
+      >
+        COMPRAR
+      </button>
+    </footer>
   </div>
 </div>
