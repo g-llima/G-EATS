@@ -1,0 +1,48 @@
+section {
+    height: 60vh;
+    width: 100%;
+    background: url("../../../../assets/imgs/hero/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+
+    .texts {
+        text-align: center;
+        position: relative;
+        background: rgba(255, 249, 249, 0.98);
+        box-shadow: 20px 20px 0px var(--color-red);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 0 auto;
+
+        h1 {
+            font-size: calc(30px + 2vw);
+            color: rgb(14, 14, 14);
+            letter-spacing: 1px;
+
+            span {
+                color: var(--color-red);
+            }
+        }
+
+        h5 {
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-bottom: 2rem;
+        }
+
+        mat-icon {
+            transition: all .2s ease-out;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--color-red);
+                transform: scale(1.2);
+            }
+        }
+    }
+}

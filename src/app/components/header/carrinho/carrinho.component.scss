@@ -5,9 +5,10 @@
     align-items: center;
     overflow: hidden;
     width: 0;
+    top: 0;
     opacity: 0;
     height: 100vh;
-    margin-top: 1.8rem;
+    margin-top: 5rem;
     z-index: 9999;
 
     background-color: var(--color-dark);
