@@ -8,7 +8,13 @@
       <h3 class="product-name">{{ product.product_name }}</h3>
       <mat-icon *ngIf="product.veg">spa</mat-icon>
     </header>
-    <p class="product-description">{{ product.description }}</p>
+    <p class="product-description">
+      {{
+        product.description.length > 100
+          ? product.description.substring(0, 100) + "..."
+          : product.description
+      }}
+    </p>
   </div>
 
   <footer class="card-footer">
