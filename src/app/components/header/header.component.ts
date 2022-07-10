@@ -8,6 +8,8 @@ import { CarrinhoService } from 'src/app/services/carrinho.service';
 })
 export class HeaderComponent implements OnInit {
   carrinhoAberto = false;
+  mobileOpen = false;
+  mobile = false;
   quantidadeProdutos: number = 0;
 
   constructor(
@@ -25,9 +27,24 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.quantidadeProdutos = this.carrinhoService.retornarQuantidadeProdutos();
+
+    this.mobile = document.body.offsetWidth <= 768;
+    window.onresize = () => {
+      this.mobile = document.body.offsetWidth <= 768;
+      this.carrinhoAberto = false;
+      this.mobileOpen = false;
+    };
   }
 
-  OnClick() {
+  handleCartClick() {
     this.carrinhoAberto = !this.carrinhoAberto;
+  }
+
+  handleMobileOpen() {
+    if (this.carrinhoAberto) {
+      this.carrinhoAberto = false;
+    } else {
+      this.mobileOpen = !this.mobileOpen;
+    }
   }
 }

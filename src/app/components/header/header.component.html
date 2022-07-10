@@ -1,14 +1,43 @@
 <header>
   <div class="conteudo">
     <div class="logo">
-      <h2><span>G</span>EATS</h2>
+      <img src="assets/imgs/logo.png" alt="GEATS" />
     </div>
-    <div class="items">
+    <div
+      *ngIf="mobile"
+      [ngClass]="{ mobile_items: true, openMobile: mobileOpen }"
+    >
+      <mat-icon class="list-icon" (click)="handleMobileOpen()">list</mat-icon>
+      <ul>
+        <li>
+          <span>(51) 99999-9999</span>
+        </li>
+        <li>CARDÁPIO</li>
+        <li>SOBRE NÓS</li>
+        <li>
+          <div class="carrinho">
+            <mat-icon aria-hidden="false" (click)="handleCartClick()"
+              >shopping_cart</mat-icon
+            >
+            <p class="quantidade-items" *ngIf="quantidadeProdutos != 0">
+              {{ quantidadeProdutos }}
+            </p>
+          </div>
+        </li>
+      </ul>
+      <app-carrinho [carrinhoAberto]="carrinhoAberto"></app-carrinho>
+    </div>
+    <div *ngIf="!mobile" class="items">
+      <h4><span>(51) 99999-9999</span></h4>
+      <h4>CARDÁPIO</h4>
+      <h4>SOBRE NÓS</h4>
       <div class="carrinho">
-        <mat-icon aria-hidden="false" (click)="OnClick()"
+        <mat-icon aria-hidden="false" (click)="handleCartClick()"
           >shopping_cart</mat-icon
         >
-        <p class="quantidade-items">{{ quantidadeProdutos }}</p>
+        <p class="quantidade-items" *ngIf="quantidadeProdutos != 0">
+          {{ quantidadeProdutos }}
+        </p>
       </div>
       <!-- <app-carrinho *ngIf="carrinhoAberto"></app-carrinho> -->
       <app-carrinho [carrinhoAberto]="carrinhoAberto"></app-carrinho>
