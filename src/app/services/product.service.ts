@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Product } from '../components/products/product/product';
 import { CarrinhoService } from './carrinho.service';
 
@@ -13,7 +12,10 @@ export class ProductService {
   ) {}
 
   retrieveAll(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(environment.api_url);
+    let res = this.httpClient.get<Product[]>(
+      'https://geats-api.herokuapp.com/'
+    );
+    return res;
   }
 
   addQuantity(produto: Product): Product {
@@ -39,7 +41,10 @@ export class ProductService {
   buyProducts(produtos: Product[]) {
     console.log(produtos);
     this.httpClient
-      .post(environment.api_url + 'api/create-checkout-session', produtos)
+      .post(
+        'https://geats-api.herokuapp.com/api/create-checkout-session',
+        produtos
+      )
       .subscribe((x: any) => {
         window.location.href = x.sessionUrl;
       });

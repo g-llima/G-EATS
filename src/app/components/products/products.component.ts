@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, IterableDiffers, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 
 import { Product } from './product/product';
@@ -13,10 +13,18 @@ export class ProductsComponent implements OnInit {
   _FILTERED_PRODUCTS: Product[];
   isFiltered = false;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private iterableDiffers: IterableDiffers
+  ) {}
 
   ngOnInit(): void {
-    this.retrieveAll();
+    if (this._PRODUTOS?.length == 0 || this._PRODUTOS === undefined) {
+      this.retrieveAll();
+      setTimeout(() => {
+        this.ngOnInit();
+      }, 5000);
+    }
   }
 
   onKey(event: any) {
